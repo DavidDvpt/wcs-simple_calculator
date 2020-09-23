@@ -7,29 +7,32 @@
 </head>
     <body>
         <script>
-            let firstValue = prompt('Valeur numéro 1 :');
+            let firstValue = +prompt('Valeur numéro 1 :');
             let operator = prompt('Operator :');
-            let secondValue = prompt('Valeur numéro 2 : ');
+            let secondValue = +prompt('Valeur numéro 2 : ');
 
+            let result;
             switch(operator){
                 case '+':
-                    console.log(+firstValue + +secondValue);
+                    result = firstValue + secondValue;
                     break;
                 case '-':
-                    console.log(+firstValue - +secondValue);
+                    result = firstValue - secondValue;
                     break;
                 case '*':
-                    console.log(+firstValue * +secondValue);
+                    result = firstValue * secondValue;
                     break;
                 case '/':
-                    console.log(+firstValue / +secondValue);
+                    result = firstValue / secondValue;
                     break;
                 case '%':
-                default:
-                    console.log(+firstValue % +secondValue);
+                    result = firstValue % secondValue;
                     break;
+                default:
+                    throw new Error("Invalid opérator");
             }
 
+            console.log(`resultat ${result}`)
         </script>
     </body>
 </html>
