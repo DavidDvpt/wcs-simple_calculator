@@ -1,4 +1,10 @@
-div {
+.formBtn {
+    width: 150px;
+}
+
+.btnDiv {
+    margin: auto;
+}div {
     text-align : center;
 }
 .label {

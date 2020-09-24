@@ -4,16 +4,12 @@ let firstValue = document.querySelector('#numberOne');
 let secondValue = document.querySelector('#numberTwo');
 let operator = document.querySelector('#operator');
 let result = document.querySelector('#result');
+
 form.addEventListener('submit', function (e) {
     e.preventDefault();
 })
 
-button.addEventListener('click', function (event) {
-    // let firstValue = +document.querySelector('#numberOne').value;
-    // let secondValue = +document.querySelector('#numberTwo').value;
-    // let operator = document.querySelector('#operator').value;
-    // let result = document.querySelector('#result');
-    
+button.addEventListener('click', function (event) { 
     let resultTemp;
     switch(operator.value){
         case '+':
@@ -34,6 +30,6 @@ button.addEventListener('click', function (event) {
         default:
             throw new Error("Invalid opérator");
     }
-    console.log(resultTemp);
+
     result.value = resultTemp;
 })
