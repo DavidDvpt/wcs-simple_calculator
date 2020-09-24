@@ -36,8 +36,6 @@ document.querySelector("#btnVirgule").addEventListener("click", function(e) {
 
 // store numbers when user push operator button
 let operators = document.querySelectorAll('.operator')
-console.log(value1);
-console.log(value2);
 
 for (let i = 0; i < operators.length; i++) {
     operators[i].addEventListener("click", function (e) {
@@ -52,20 +50,17 @@ for (let i = 0; i < operators.length; i++) {
             result.value = "Calculez!";
             //console.log(`value2 = ${ value2 }`);
         }
-        // else {
-        //     console.log("je passe ici");
-        //     result.value = "Calculez!";
-        // }
     })
 }
 
+// On calcule !
 document.querySelector('#btnCalculate').addEventListener('click', function(e) {
     if (value1) {
         value1 = +value1;
         if (!value2) {
             value2 = +result.value
         }
-        console.log(`value1 : ${value1} ${typeof(value1)} - value2 : ${value2} ${typeof(value1)}`)
+        //console.log(`value1 : ${value1} ${typeof(value1)} - value2 : ${value2} ${typeof(value1)}`)
         switch(operand){
             case '+':
                 result.value =  +value1 + +value2;
@@ -85,5 +80,8 @@ document.querySelector('#btnCalculate').addEventListener('click', function(e) {
             default:
                 throw new Error("Invalid opérator");
         }
-    }
+        value1 = null;
+        value2 = null;
+        operand = null;
+      }
 })
