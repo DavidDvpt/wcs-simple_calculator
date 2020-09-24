@@ -37,3 +37,30 @@ input {
     font-weight: bold;
     text-align: center;
 }
+.containerExecute {
+    padding: 10px 0px;
+    width : 100%;
+    display : flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.btnExecute {
+    width: 49%;
+    height : 50px;
+    font-weight: bold;
+    font-size: 24px;
+    border : none;
+    border-radius : 5px 5px;
+}
+#btnReset {
+    background-color: lightgray;
+}
+#btnReset:hover {
+    background-color: darkgray;
+}
+#btnCalculate {
+    background-color: blue;
+}
+#btnCalculate:hover{
+    background-color: darkslateblue;
+}
