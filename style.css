@@ -1,3 +1,19 @@
-label {
+div {
+    text-align : center;
+}
+.label {
+    display: inline-block;
+    width : 100px;
+    margin : auto;
+}
+
+.input {
+    display: inline-block;
     width : 80px;
+    margin : auto;
+
+}
+button {
+    margin: auto;
+    
 }

@@ -9,14 +9,14 @@
     <body>
         <h1>Simple calculator</h1>
         <main>
-            <form action="#">
+            <form action="#" id="form">
             <div>
-                <label for="numberOne">Number 1</label>
-                <input type="number" id="numberOne">
+                <label for="numberOne" class="label">Number 1</label>
+                <input type="number" id="numberOne" class="input">
             </div>
             <div>
-                <label for="operator">Operator</label>
-                <select name="operator" id="operator">
+                <label for="operator" class="label">Operator</label>
+                <select name="operator" id="operator" class="input">
                     <option value="+">+</option>
                     <option value="-">-</option>
                     <option value="*">*</option>
@@ -25,12 +25,59 @@
                 </select>
             </div>
             <div>
-                <label for="numberTwo">Number 2</label>
-                <input type="number" id="numberTwo">
+                <label for="numberTwo" class="label">Number 2</label>
+                <input type="number" id="numberTwo" class="input">
             </div>
+            <button type="submit" id="calculateBtn">Calculate</button>
+            <div>
+                <label for="Result" class="label">Result</label>
+                <input type="text" id="result" class="input" readonly="true">
+            </div>
+
         </form>
         </main>
         <!-- <script src="script.js">
         </script> -->
+        <script>
+            let button = document.querySelector('#calculateBtn');
+            let form = document.querySelector('#form');
+            let firstValue = document.querySelector('#numberOne');
+            let secondValue = document.querySelector('#numberTwo');
+            let operator = document.querySelector('#operator');
+            let result = document.querySelector('#result');
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+            })
+            
+            button.addEventListener('click', function (event) {
+                // let firstValue = +document.querySelector('#numberOne').value;
+                // let secondValue = +document.querySelector('#numberTwo').value;
+                // let operator = document.querySelector('#operator').value;
+                // let result = document.querySelector('#result');
+                
+                let resultTemp;
+                switch(operator.value){
+                    case '+':
+                        resultTemp =  +firstValue.value + +secondValue.value;
+                        break;
+                    case '-':
+                        resultTemp = +firstValue.value - +secondValue.value;
+                        break;
+                    case '*':
+                        resultTemp = +firstValue.value * +secondValue.value;
+                        break;
+                    case '/':
+                        resultTemp = +firstValue.value / +secondValue.value;
+                        break;
+                    case '%':
+                        resultTemp = +firstValue.value % +secondValue.value;
+                        break;
+                    default:
+                        throw new Error("Invalid opérator");
+                }
+                console.log(resultTemp);
+                result.value = resultTemp;
+            })
+        </script>
     </body>
 </html>
