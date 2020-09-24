@@ -1,25 +1,39 @@
-.formBtn {
-    width: 150px;
-}
-
-.btnDiv {
+form {
+    width: 400px;
     margin: auto;
-}div {
-    text-align : center;
-}
-.label {
-    display: inline-block;
-    width : 100px;
-    margin : auto;
+    background-color: gray;
+    padding: 5px;
 }
 
-.input {
-    display: inline-block;
-    width : 80px;
-    margin : auto;
-
-}
-button {
+input {
+    display : block;
+    width : 95%;
     margin: auto;
-    
+    margin-bottom: 5px;
+    padding: 10px 0px;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+#buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.btn {
+    width : 96px;
+    height : 100px;
+    background-color: indigo;
+    margin : 1px;
+    border : 1px solid black;
+    border-radius : 5px 5px;
+    display : flex;
+    align-items: center;
+    justify-content: center;
+}
+.btnContent {
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
 }

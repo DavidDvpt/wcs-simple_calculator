@@ -3,44 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 
     <title>Simple calculator</title>
 </head>
-    <body>
-        <h1>Simple calculator</h1>
-        <main>
-            <form action="#" id="form" class="mx-5">
-                <div class="my-3">
-                    <label for="numberOne" class="label">Number 1</label>
-                    <input type="number" id="numberOne" class="form-control">
+<body>
+    <h1>Simple calculator</h1>
+    <main>
+        <form action="#" id="form" class="mx-5">
+            <input type="text" id="result" readonly="true">
+            <div id="buttons">
+                <div class="btn" id="btn1">
+                    <p class="btnContent">1</p>
                 </div>
-                <div class="my-3">
-                    <label for="operator" class="label">Operator</label>
-                    <select name="operator" id="operator" class="form-control">
-                        <option value="+">+</option>
-                        <option value="-">-</option>
-                        <option value="*">*</option>
-                        <option value="/">/</option>
-                        <option value="%">%</option>
-                    </select>
+                <div class="btn" id="btn2">
+                    <p class="btnContent">2</p>
                 </div>
-                <div class="my-3">
-                    <label for="numberTwo" class="label">Number 2</label>
-                    <input type="number" id="numberTwo" class="form-control">
+                <div class="btn" id="btn3">
+                    <p class="btnContent">3</p>
                 </div>
-                <div class="my-3 btnDiv">
-                    <button type="reset" id="resetBtn" class="btn btn-secondary btn-lg my-3 formBtn">Reset</button>
-                    <button type="submit" id="calculateBtn" class="btn btn-primary btn-lg my-3 formBtn">Calculate</button>
+                <div class="btn" id="btnPlus">
+                    <p class="btnContent">+</p>
                 </div>
-                <div class="my-3">
-                    <label for="Result" class="label">Result</label>
-                    <input type="text" id="result" class="form-control" readonly="true">
+                <div class="btn" id="btn4">
+                    <p class="btnContent">4</p>
                 </div>
-
-            </form>
-        </main>
+                <div class="btn" id="btn5">
+                    <p class="btnContent">5</p>
+                </div>
+                <div class="btn" id="btn6">
+                    <p class="btnContent">6</p>
+                </div>
+                <div class="btn" id="btnMoins">
+                    <p class="btnContent">-</p>
+                </div>
+                <div class="btn" id="btn7">
+                    <p class="btnContent">7</p>
+                </div>
+                <div class="btn" id="btn8">
+                    <p class="btnContent">8</p>
+                </div>
+                <div class="btn" id="btn9">
+                    <p class="btnContent">9</p>
+                </div>
+                <div class="btn" id="btnMultiplie">
+                    <p class="btnContent">*</p>
+                </div>
+                <div class="btn" id="btn0">
+                    <p class="btnContent">0</p>
+                </div>
+                <div class="btn" id="btnVirgule">
+                    <p class="btnContent">.</p>
+                </div>
+                <div class="btn" id="btnModulo">
+                    <p class="btnContent">%</p>
+                </div>
+                <div class="btn" id="btnDivise">
+                    <p class="btnContent">/</p>
+                </div>
+                <div class="btnDiv">
+                    <button type="reset" id="btnReset" class="">Reset</button>
+                    <button type="submit" id="btnCalculate" class="">Calculate</button>
+                </div>
+            </div>
+        </form>
+    </main>
 
         <script src="secondCalculator.js"></script>
     </body>
