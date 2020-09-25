@@ -1,7 +1,11 @@
 let result = document.querySelector("#result");
+let decimalButton = document.querySelector("#btnVirgule");
+let calculateButton = document.querySelector("#btnCalculate");
+let resetButton = document.querySelector(".reset");
 let value1;
 let value2;
 let operand;
+let decimal = false;
 
 // stop refresh after submit
 document.querySelector('#form').addEventListener('submit', function (e) {
@@ -12,12 +16,11 @@ document.querySelector('#form').addEventListener('submit', function (e) {
 let btns = document.querySelectorAll('.btn');
 for (let i = 0; i < btns.length; i++) {
     btns[i].addEventListener("mousedown", function(e) {
-        btns[i].style.backgroundColor = "red";
+        btns[i].style.backgroundColor = "white";
     })
     btns[i].addEventListener("mouseup", function(e) {
-        btns[i].style.backgroundColor = "indigo";
-    })
-    
+        btns[i].style.backgroundColor = "rgba(0, 0, 0, 0)";
+    })  
 }
 
 // add events on calculators buttons for write in the "screen"
@@ -30,8 +33,11 @@ for(let i = 0; i<=9; i++){
 }
 
 // Add event on "virgule" button
-document.querySelector("#btnVirgule").addEventListener("click", function(e) {
+decimalButton.addEventListener("click", function(e) {
     result.value += ".";
+    //prevents from entering '.' twice (.disabled didn't work)
+    decimalButton.style.display = "none";
+    calculateButton.style.gridColumn = "3/5";
 })
 
 // store numbers when user push operator button
@@ -41,20 +47,19 @@ for (let i = 0; i < operators.length; i++) {
     operators[i].addEventListener("click", function (e) {
         if(!value1) {
             value1 = +result.value;
-            operand = operators[i].childNodes[1].textContent;
-            console.log(operand);
+            operand = operators[i].textContent;
             result.value = "";
             //console.log(`value1 = ${ value1 }`);
         } else if(!value2) {
             value2 = +result.value;
-            result.value = "Calculez!";
+            result.value = "";
             //console.log(`value2 = ${ value2 }`);
         }
     })
 }
 
 // On calcule !
-document.querySelector('#btnCalculate').addEventListener('click', function(e) {
+calculateButton.addEventListener('click', function(e) {
     if (value1) {
         value1 = +value1;
         if (!value2) {
@@ -68,20 +73,27 @@ document.querySelector('#btnCalculate').addEventListener('click', function(e) {
             case '-':
                 result.value = +value1 - +value2;
                 break;
-            case '*':
+            case 'x':
                 result.value = +value1 * +value2;
                 break;
             case '/':
                 result.value = +value1 / +value2;
                 break;
-            case '%':
-                result.value = +value1 % +value2;
-                break;
             default:
-                throw new Error("Invalid opérator");
+                throw new Error("Invalid operator");
         }
         value1 = null;
         value2 = null;
         operand = null;
       }
+})
+
+//Resets everything (couldn't use a button type="reset" because of bootstrap)
+resetButton.addEventListener('click', () => {
+    value1 = null;
+    value2 = null;
+    operand = null;
+    result.value = "";
+    decimalButton.style.display = "flex";
+    calculateButton.style.gridColumn = "4/5";
 })
