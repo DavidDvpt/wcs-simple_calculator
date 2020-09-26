@@ -57,14 +57,15 @@ let operators = document.querySelectorAll('.operator')
 for (let i = 0; i < operators.length; i++)
 {
     operators[i].addEventListener("click", function (e) {
-        if(value1)
+        if(!value1)
         {
             value1 = +displayScreen.value;
             displayScreen.value = "";
-            console.log(operators[i]);
-            operand = operators[i].nodeValue[1].textContent;
-            //console.log(`value1 = ${ value1 }`);
-            if(value2)
+
+            // store the text of the first element child (p) into operand
+            operand = operators[i].firstElementChild.textContent;
+            
+            if(!value2)
             {
                 value2 = +displayScreen.value;
                 displayScreen.value = "";
@@ -85,7 +86,6 @@ btnCalculate.addEventListener('click', function(e) {
             value2 = +displayScreen.value
         }
 
-        
         //console.log(`value1 : ${value1} ${typeof(value1)} - value2 : ${value2} ${typeof(value1)}`)
         switch(operand){
             case '+':
