@@ -85,6 +85,7 @@ btnCalculate.addEventListener('click', function(e) {
             value2 = +displayScreen.value
         }
 
+        
         //console.log(`value1 : ${value1} ${typeof(value1)} - value2 : ${value2} ${typeof(value1)}`)
         switch(operand){
             case '+':
