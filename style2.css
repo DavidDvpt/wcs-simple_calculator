@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.calculator {
+    border: 1px solid white;
+    width: 40%;
+    height: 800px;
+    margin: 100px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    border-radius: 10px;
+    overflow: hidden;
+    animation: 1s ease-out 0s 1 slideIn;
+}
+
+.calculator div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+}
+
+.calculator div:hover {
+    border: 1px solid white;
+}
+
+.display {
+    background: rgb(197, 197, 197);
+    grid-column: 1 / 4;
+    overflow: hidden;
+    text-align: end;
+    font-size: 2em;
+    padding: 0 10%;
+}
+
+.row1 {
+    display: grid;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-200%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
